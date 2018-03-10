@@ -1,0 +1,51 @@
+package b_Zadania_domowe.a_Dzien_1;
+
+public class BankAccount {
+	
+	private int number;
+	private double cash;
+	private int accountNumber; 
+	
+	public BankAccount(int accountNumber) { 
+		
+		cash = 0; 
+		this.accountNumber = accountNumber; 
+	}
+	
+	
+	public int getNumber() { 
+		return this.number;
+	}
+	
+	public double getCash() { 
+		return this.cash; 
+		
+	}
+	
+	public void depositCash(double amount) { 
+		
+		if(amount>0) { 
+			cash += amount; 			
+		}
+		
+	}
+	
+	public double withdrawCash(double amount) { 
+		if(amount>0) { 
+			if(amount <= cash) { 
+				cash -= amount;
+			} else { 
+				
+				amount = cash; 
+				cash = 0; 
+			}
+		}
+		
+		return amount; 
+	}
+	
+	public String printInfo() { 
+		return "For Account Number = "+accountNumber+" the current balance is "+cash; 
+	}
+	
+}

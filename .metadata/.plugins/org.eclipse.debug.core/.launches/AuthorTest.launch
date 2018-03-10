@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/Module 2/WAR_JEE_W_02_JEE_OOP/b_Zadania_domowe/a_Dzien_1/AuthorTest.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="b_Zadania_domowe.a_Dzien_1.AuthorTest"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Module 2"/>
+</launchConfiguration>

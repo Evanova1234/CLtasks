@@ -1,0 +1,42 @@
+package b_Zadania_domowe.b_Dzien_2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class User {
+	
+	protected int id; 
+	protected String firstName;
+	protected String lastName; 
+	
+	protected static int nextId; 
+	protected List<Book> bookList = new ArrayList<Book>();
+	
+	
+	public User(String firstName, String lastName) { 
+		this.id = nextId;
+		nextId++; 
+		this.firstName = firstName; 
+		this.lastName = lastName; 
+	}
+	
+
+
+	public void borrowBook(Book book) {
+		bookList.add(book);
+		
+	}
+	
+	public void returnBook(Book book) {
+		for(int i=0;i<bookList.size();i++) { 
+			if(bookList.)
+			
+		}
+	}
+	
+	
+}
+
+1. Dodaj metodę `returnBook(Book book)` przyjmującą obiekt klasy `Book`, która oznaczy książką jako dostępną do wypożyczenia,
+przez zmianę atrybutu `available` na wartość `true`, usunie z tablicy `books` obiektu `User` obiekt `Book`.
+2. Dodaj metodę `returnAllBooks()`, która dokona zwrotu wszystkich posiadanych książek.

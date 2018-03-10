@@ -1,0 +1,43 @@
+package b_Zadania_domowe.a_Dzien_1;
+
+public class BookBuilder {
+
+	
+	private int id;
+	private String title;
+	private boolean available = true; 
+	private String author; 
+	private String[] additionalAuthors;
+	
+	public BookBuilder setId(int id) { 
+		this.id = id; 
+		return this; 
+		
+	}
+	
+	public BookBuilder setTitle(String title) { 
+		this.title = title; 
+		return this; 
+	}
+	
+	public BookBuilder setAvailable(boolean available) { 
+		this.available = available; 
+		return this; 
+	}
+	
+	public BookBuilder setAuthor(String author) { 
+		this.author = author; 
+		return this; 
+	}
+	
+	public BookBuilder setAdditionalAuthors(String[] additionalAuthors) { 
+		this.additionalAuthors = additionalAuthors; 
+		return this; 
+	}
+	
+	public Book build() { 
+		
+		return new Book(this); 
+	}
+	
+}

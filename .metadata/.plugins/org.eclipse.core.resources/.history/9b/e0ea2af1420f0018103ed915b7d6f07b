@@ -1,0 +1,53 @@
+package pl.testpackage;
+
+//#### Zadanie 4
+//1. W projekcie stwórz servlet `Servlet24` dostępny pod adresem **/Servlet24**,
+//oraz stronę HTML `index.html`, z odnośnikiem do servletu.
+//2. Zainicjuj w deskryptorze parametr dostępny w całej aplikacji o nazwie `applicationName` oraz wartości `MyApplicationName`. 
+//3. Pobierz parametr `applicationName` w servlecie, a następnie wyświetl na stronie.
+
+
+import java.io.IOException;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Servlet24
+ */
+@WebServlet("/Servlet24")
+public class Servlet24 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Servlet24() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+    
+    String param = getServletContext().getInitParameter("applicationName"); 
+ 
+//    public void init(ServletConfig config) throws ServletException {
+//    	// TODO Auto-generated method stub
+//    	param = config.getInitParameter("applicationName");
+//    	super.init(config);
+//    }
+    
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append(""); 
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

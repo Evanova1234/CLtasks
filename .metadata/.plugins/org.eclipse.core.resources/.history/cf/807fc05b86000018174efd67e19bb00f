@@ -1,0 +1,38 @@
+package b_Zadania_domowe.a_Dzien_1;
+
+
+public class User {
+	
+	private int id; 
+	private String firstName; 
+	private String lastName; 
+	private Book[] books; 
+	
+	public User(int id, String firstName, String lastName) { 
+		this.id = id;
+		this.firstName = firstName; 
+		this.lastName = lastName; 
+	}
+	
+	public void addBook(Book book) { 
+		if(book.getId()>=books.length) { 
+			this.extendArray(books);
+			this.books[book.getId()] = book; 			
+			
+		} else {
+			
+			this.books[book.getId()] = book;
+		}
+		
+	}
+	
+	public Book[] extendArray(Book[] src) { 
+		
+		Book[] target  = new Book[src.length*2];
+		System.arraycopy(src, 0, target, 0, src.length);
+		src = target;
+		return src;
+		
+	}
+
+}

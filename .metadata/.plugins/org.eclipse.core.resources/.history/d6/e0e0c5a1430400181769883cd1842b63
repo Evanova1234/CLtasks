@@ -1,0 +1,35 @@
+package utilities;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+
+public class utilties {
+	
+	
+    public static void showResults(String query, String database) { 
+    	try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+database+"?useSSL=false","root","coderslab")) { 
+    		
+    		Statement stat = con.createStatement(); 
+    		ResultSet results = stat.executeQuery(query); 
+    		ResultSetMetaData rsmd = results.getMetaData();
+    		int columnsNumber = rsmd.getColumnCount();
+    		
+    		while(results.next()) { 
+    			for(int i=1; i<columnsNumber; i++) { 
+        			System.out.print(results.getString(i)+"   ");
+    			}
+    			System.out.println();
+    		}
+    		System.out.println("Koniec tabeli");
+    		
+    	} catch(Exception e) { 
+    		
+    		e.printStackTrace();
+    	}
+    }
+    
+
+}

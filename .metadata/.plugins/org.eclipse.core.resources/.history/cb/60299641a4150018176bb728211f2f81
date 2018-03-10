@@ -1,0 +1,64 @@
+package exam;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+
+public class Main2 {
+	
+	
+	
+	public static void main(String[] args) { 
+		
+		try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Staff?useSSL=false","root", "coderslab")) { 
+    		
+			System.out.println("Oto wszystkie działy w firmie:");
+    		Statement statement = con.createStatement();
+			ResultSet readLines = statement.executeQuery("Select * from DEPARTMENTS;");
+			String id = "";
+			String name = ""; 
+
+			while (readLines.next()) {
+
+				id = readLines.getString("ID");
+				name = readLines.getString("NAME");
+				System.out.println(id+" "+name);
+			
+			}
+    		
+			System.out.println("Podaj id działu, którego pracowników chcesz wyświetlić: ");
+			Scanner userInput = new Scanner(System.in); 
+			String Department_id = userInput.nextLine(); 
+			ResultSet userQuery = statement.executeQuery("Select * from USERS where DEPARTMENT_ID=\""+Department_id+";");
+			String firstName = "";
+			String lastName = "";
+			String email = ""; 
+			String salary = ""; 
+			System.out.println("Oto wyniki: ");
+			while(userQuery.next()) { 
+			firstName = userQuery.getString("FIRST_NAME"); 
+			lastName = userQuery.getString("LAST_NAME");
+			email = userQuery.getString("EMAIL");
+			salary = userQuery.getString("SALARY");
+			System.out.println(firstName+" "+lastName+" "+email+" "+salary);
+			}
+			
+			userInput.close();
+    		
+    		
+    	} catch(SQLException e) { 
+    		e.printStackTrace(); 
+    	}
+		
+
+		
+		
+	}
+	
+	
+
+}

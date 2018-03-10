@@ -1,0 +1,5 @@
+package pl.coderslab.mvc;
+
+public class Book {
+
+}

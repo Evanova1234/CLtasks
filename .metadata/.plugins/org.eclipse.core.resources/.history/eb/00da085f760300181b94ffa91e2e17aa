@@ -1,0 +1,50 @@
+package a_Zadania.a_Dzien_1.b_Dodawanie_danych;
+
+import java.sql.*;
+import java.util.Scanner;
+
+//1. Uzupełnij ciało metody tak, by podane parametry zapisała do tabeli `Cinemas`.
+//2. W metodzie main pobierz z konsoli wymagane parametry a następnie wywołaj utworzoną metodę.
+
+
+public class Main4 {
+
+	
+	static void addCinema(int id, String name, String address) { 
+		
+		try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cinemas_ex?useSSL=false", "root", "coderslab")) { 
+			
+//			PreparedStatement prepSt = con.prepareStatement("INSERT INTO Cinemas Values(?, ?, ?)");
+//			prepSt.setInt(1, id);
+//			prepSt.setString(2, name);
+//			prepSt.setString(3, address);
+//			prepSt.executeUpdate(); 
+
+			Statement St = con.createStatement(); 
+			St.executeUpdate("INSERT INTO Cinemas Values("+id+", \""+name+"\", \""+address+"\");"); 
+			
+		} catch (Exception e) { 
+			
+			System.out.println("Coś poszło nie tak");
+			//e.printStackTrace(); 
+		}
+		
+	}
+	
+	
+	public static void main(String[] args) { 
+		
+		Scanner scanner = new Scanner(System.in); 
+		System.out.println("Podaj id kina: ");
+		int id = scanner.nextInt(); 
+		System.out.println("Podaj nazwę kina: ");
+		scanner.nextLine();
+		String name = scanner.nextLine(); 
+		System.out.println("Podaj adres kina: ");
+		String address = scanner.nextLine(); 
+		addCinema(id,name,address);
+		scanner.close();
+		
+	}
+	
+}

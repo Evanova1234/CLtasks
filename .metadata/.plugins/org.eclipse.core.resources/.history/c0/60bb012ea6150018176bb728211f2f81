@@ -1,0 +1,55 @@
+package exam;
+
+//1. Utwórz klasę `BMI`.
+//Klasa ma posiadać:
+// * atrybut typu `double` - weight
+// * atrybut typu `double` - height
+// * konstruktor, który pozwoli ustawić atrybuty `weight` oraz `height`.
+// * metodę publiczną  `calculate double ()`, która obliczy BMI - body mass index dla atrybutów.
+// * statyczną tablicę `double[] history` - tablica ma zawierać historię każdego wyniku wywołania metody `calculate`
+// * metodę `double bmiAvg()` - która zwróci średnią wszystkich wyników.
+// 
+//2. Aby obliczyć BMI należy podzielić wagę (w kilogramach) przez wzrost (w metrach) podniesiony do kwadratu (waga /(wzrost ^2)).
+//3. Metoda otrzymuje wagę w kilogramach ale wzrost w centymetrach.
+//4. Metoda ma zwrócić wyliczone BMI z dokładnością 2 miejsc po przecinku. 
+
+public class BMI {
+	
+	private double weight; 
+	private double height; 
+	static double[] history; 
+	static int i; 
+	
+	public BMI(double weight, double height) { 
+		this.weight = weight;
+		this.height = height;
+	}
+	
+	
+	
+	public double calculate() { 
+		i++; 
+		history[i]= weight/(Math.pow(height, 2));
+		return Math.round(weight/Math.pow(height/100, 2)*100)/100;
+	}
+	
+	
+	public double bmiAVG() { 
+		
+		double average; 
+		double sum = 0;
+		
+		for(int x=0; x==i; x++) { 
+			sum=+ history[x];
+		}
+		
+		average = sum/i;
+		return average; 
+		
+	}
+	
+	
+	
+	
+
+}

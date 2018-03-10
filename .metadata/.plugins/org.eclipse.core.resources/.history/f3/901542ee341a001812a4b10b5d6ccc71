@@ -1,0 +1,88 @@
+package pl.coderslab.excersises;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+/**
+ * Servlet implementation class Sess06
+ */
+@WebServlet("/favImages")
+public class Sess06 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public Sess06() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		response.setContentType("text/html");
+		HttpSession sess = request.getSession();
+		Object pagesVisitedObject = sess.getAttribute("pagesVisited");
+		Object likeCountObject = sess.getAttribute("likeCount");
+
+		if (pagesVisitedObject == null) {
+			sess.setAttribute("pagesVisited", 0);
+			pagesVisitedObject = sess.getAttribute("pagesVisited");
+		}
+
+		if (likeCountObject == null) {
+			sess.setAttribute("likeCount", 0);
+			
+		}
+
+		Integer pagesVisitedInteger = (Integer) pagesVisitedObject;
+		Integer likeCountInteger = (Integer) likeCountObject;
+
+		response.getWriter().append("Odwiedziłeś już ").append(pagesVisitedInteger.toString())
+				.append(" stron. Polubiłeś zas ").append(likeCountInteger.toString()).append(" obrazków");
+
+		if (pagesVisitedInteger < 4) {
+			pagesVisitedInteger++;
+			sess.setAttribute("pagesVisited", pagesVisitedInteger);
+			response.sendRedirect("wybor_" + pagesVisitedInteger.toString() + ".html");
+		} else {
+			response.getWriter().append("Widziano już wszystkie obrazki. Koniec programu");
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String ifLikes = request.getParameter("ifLikes");
+		Boolean ifLikesBool = Boolean.valueOf(ifLikes);
+		HttpSession sess = request.getSession();
+		Object likeCountObject = sess.getAttribute("likeCount");
+		Integer likeCountInt = Integer.valueOf((String) likeCountObject);
+
+		if (likeCountObject == null) {
+			sess.setAttribute("likeCount", null);
+		}
+
+		if (ifLikesBool) {
+			likeCountInt++;
+		}
+
+		sess.setAttribute("likeCount", likeCountInt.toString());
+		doGet(request, response);
+	}
+
+}

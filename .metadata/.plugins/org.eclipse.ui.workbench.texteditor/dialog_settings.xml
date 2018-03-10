@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="653" key="DIALOG_X_ORIGIN"/>
+		<item value="399" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="&#x09;static String decode(String str, int shift) { " key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="&#x09;static String decode(String str, int shift) { "/>
+			<item value="&#x0A;`static void copyFile(String directory, &#x0A;String fileName, String secondFileName)`.&#x0A;&#x0A;1. Uzupełnij ciało metody tak, aby z katalogu &#x0A;`directory` kopiowała plik o nazwie `fileName` &#x0A;do pliku o nazwie `secondFileName`.&#x0A;2. Sprawdzaj czy plik nie istnieje.&#x0A;&quot;&#x0A;"/>
+			<item value="W pliku `Main3.java` stwórz metodę o sygnaturze "/>
+			<item value="W pliku `Main5.java` została umieszczona metoda o sygnaturze "/>
+			<item value="sort"/>
+			<item value="    &#x09;if (num1&gt;num2 &amp;&amp; num1&gt;num3) {"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="338" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="434" key="DIALOG_HEIGHT"/>
+		<item value="758" key="DIALOG_X_ORIGIN"/>
+		<item value="253" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

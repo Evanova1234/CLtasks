@@ -1,0 +1,62 @@
+package exam;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.Scanner;
+
+
+public class Main3 {
+	
+	
+	
+	
+	
+	public static void main(String[] args) { 
+		
+		Scanner userInput = new Scanner(System.in);
+		System.out.println("Podaj Imię: ");
+		String firstName = userInput.nextLine(); 
+		System.out.println("Podaj Nazwisko: ");
+		String lastName = userInput.nextLine();
+		int salary=0; 
+		
+		System.out.println("Podaj dział");
+		String department = userInput.nextLine(); 
+		
+        do {
+            System.out.print("Podaj pensję: ");
+            while (!userInput.hasNextInt()) {
+                String input = userInput.next();
+                System.out.println("Niewłaściwa wartość");
+            }
+            salary = userInput.nextInt();
+        } while (salary < 0);
+		
+      
+		
+		System.out.println(firstName+" "+lastName+" "+salary+" "+department);
+		
+		try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Staff?useSSL=false",
+				"root", "coderslab")) {
+
+			Statement statement = con.createStatement();
+			System.out.println("Zapis do bazy");
+			statement.executeUpdate("Insert into USERS values (0, \""+firstName+"\", \""+lastName+"\", NULL, "+salary+", 1, "+department+");");
+			System.out.println("Zapisano!");
+			
+			
+
+		} catch (Exception e) {
+
+			System.out.println(e);
+			e.printStackTrace();
+		
+		
+	}
+	
+	
+
+}
+	
+}

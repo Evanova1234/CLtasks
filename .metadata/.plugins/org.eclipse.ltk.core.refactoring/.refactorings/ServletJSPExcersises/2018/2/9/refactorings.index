@@ -1,0 +1,11 @@
+1519564871096	Delete element
+1519564890696	Copy file
+1519564893471	Copy file
+1519564895630	Copy file
+1519568375008	Extract method 'showUserResults'
+1519568396670	Extract method 'redirectUser'
+1519568453577	Extract method 'calculateIfLiked'
+1519573021527	Extract method 'setSessionAttributes'
+1519573033687	Extract method 'generateMathForm'
+1519573045577	Extract method 'setEncoding'
+1519573075324	Extract method 'checkResults'

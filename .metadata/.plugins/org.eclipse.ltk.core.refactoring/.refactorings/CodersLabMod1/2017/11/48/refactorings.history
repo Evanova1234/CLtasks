@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;private static int sumOfElements(int [] [] task3Array)&apos; from &apos;a_Zadania.a_Dzien_1.d_Tablice_wielowymiarowe.Main3.main()&apos; to &apos;a_Zadania.a_Dzien_1.d_Tablice_wielowymiarowe.Main3&apos;&#x0A;- Original project: &apos;CodersLabMod1&apos;&#x0A;- Method name: &apos;sumOfElements&apos;&#x0A;- Destination type: &apos;a_Zadania.a_Dzien_1.d_Tablice_wielowymiarowe.Main3&apos;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;sumOfElements&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/WAR_JEE_W_02_JEE_Podstawy&lt;a_Zadania.a_Dzien_1.d_Tablice_wielowymiarowe{Main3.java" name="sumOfElements" replace="false" selection="356 167" stamp="1511686771667" version="1.0" visibility="2"/>
+</session>

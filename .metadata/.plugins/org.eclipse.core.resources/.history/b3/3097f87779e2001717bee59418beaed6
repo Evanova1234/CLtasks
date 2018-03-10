@@ -1,0 +1,29 @@
+package Cube;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Cube_regExp {
+
+
+	public static void main (String[] args) { 
+		
+		parseCubeFormat("23D10+10");
+		
+	}
+	
+	static void parseCubeFormat(String str) { 
+		
+		Pattern pattern = Pattern.compile("(\\d+)?D(\\d+)([\\+\\-]\\d+)?");
+		Matcher matcher = pattern.matcher(str); 
+		
+		String numberOfThrows = matcher.group(1);
+		
+		
+		System.out.println("liczba rzutów "+numberOfThrows);
+		
+		
+		
+	}
+	
+}

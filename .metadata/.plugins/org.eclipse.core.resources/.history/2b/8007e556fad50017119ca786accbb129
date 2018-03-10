@@ -1,0 +1,39 @@
+package b_Zadania_Domowe.a_Dzien_2;
+
+//W pliku `Main3.java` umieść  metodę  o sygnaturze 
+//`static String upperCase(String str, int index)` .
+//1. Metoda zwraca napis `str`, w którym znaki zostały 
+//zamienione na duże z pozycji podzielnych przez `index`
+
+public class Main3 {
+
+    public static void main(String[] args) {
+    	
+    	System.out.println(upperCase("abcdefgh",2));
+    	System.out.println(upperCase("abcdefghij",5));
+    	System.out.println(upperCase("abcdefghij",3));
+    }
+
+    static String upperCase(String str, int index) { 
+    	String resultString = new String(); 
+    	StringBuffer convertedText = new StringBuffer(); 
+    	
+    	for(int i=0; i<str.length();i++)
+    		
+    		if(i%index==0) { 
+    			
+    			convertedText.append(str.toUpperCase().charAt(i));
+    			
+    		} else {
+    			
+    			convertedText.append(str.charAt(i));
+    		}
+    	
+    	return resultString = convertedText.toString(); 
+    	
+    }
+    
+    	
+    }
+    
+}

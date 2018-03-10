@@ -1,0 +1,31 @@
+package b_Zadania_domowe.a_Dzien_1;
+
+
+public class Book {
+	
+	private int id;
+	private String title;
+	private boolean available = true; 
+	private String author; 
+	private String[] additionalAuthors;
+	
+	public Book()
+	
+}
+
+
+
+
+//Stwórz klasę `Book`, która ma spełniać następujące wymogi:
+//
+//1. Mieć prywatne atrybuty:
+// * `id` - atrybut typu `int` ten powinien trzymać numer identyfikacyjny książki,
+// * `title` - atrybut typu `String` określający imię pracownika,
+// * `available` - atrybut typu `boolean` określający czy książka jest możliwa do wypożyczenia, z domyślną wartością ustawioną na `true`,
+// * `author` - atrybut określający referencję do klasy `Author`,
+// * `additionalAuthors`  - tablica referencji do obiektów klasy `Author`.
+//2. Posiadać konstruktor przyjmujący id, title.
+//3. Posiadać konstruktor przyjmujący id, title, obiekt klasy `Author`.
+//4. Posiadać konstruktor przyjmujący id, title, obiekt klasy `Author`, tablicę obiektów klasy `Author`.
+//5. Posiadać gettery do wszystkich pól.
+//5. Posiadać settery do wszystkich pól oprócz pola `id`.

@@ -1,0 +1,16 @@
+package exam;
+
+
+public class Manager extends User {
+	
+	private User[] referenceUsers; 
+	private Department referenceDepartment;
+	
+	@Override
+	public String welcome() { 
+		return "Hello Manager "+firstName+" "+lastName;
+		
+	}
+	
+
+}

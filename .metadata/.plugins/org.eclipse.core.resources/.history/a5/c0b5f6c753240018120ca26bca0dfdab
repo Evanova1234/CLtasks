@@ -1,0 +1,5 @@
+package pl.coderslab.jdbc;
+
+public class BookDAO {
+
+}

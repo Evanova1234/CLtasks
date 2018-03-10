@@ -1,0 +1,25 @@
+package b_Zadania_domowe.a_Dzien_1;
+
+//Stwórz klasę `User`, która ma spełniać następujące wymogi:
+//1. Mieć prywatne atrybuty:
+// * `id` - atrybut ten powinien trzymać numer identyfikacyjny,
+// * `firstName` - atrybut określający imię autora,
+// * `lastName` - atrybut określający nazwisko autora,
+// * `books` - tablica referencji do klasy Book.
+// 
+//2. Posiadać konstruktor przyjmujący id, imię, nazwisko.
+
+public class User {
+	
+	private int id; 
+	private String firstName; 
+	private String lastName; 
+	private Book[] books; 
+	
+	public User(int id, String firstName, String lastName) { 
+		this.id = id;
+		this.firstName = firstName; 
+		this.lastName = lastName; 
+	}
+
+}

@@ -1,0 +1,49 @@
+package Cube;
+
+import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Cube_regExp {
+
+
+	public static void main (String[] args) { 
+		
+		parseCubeFormat("D10+10");
+		
+	}
+	
+	static void parseCubeFormat(String str) { 
+		
+		Pattern pattern = Pattern.compile("(\\d+)?D(\\d+)([\\+\\-]\\d+)?");
+		Matcher matcher = pattern.matcher(str); 
+		
+		if(matcher.find()) { 
+			
+			int numberOfThrows = 0; 
+			
+			if(matcher.group(1) != null) { 
+				numberOfThrows = Integer.parseInt(matcher.group(1));	
+			}
+			int cubeType = Integer.parseInt(matcher.group(2));
+			int additionalValue = Integer.parseInt(matcher.group(3));  
+			System.out.println(numberOfThrows+"D"+cubeType+"+"+additionalValue);
+		
+		Random cubeThrow = new Random(); 
+		int result = 0; 
+		
+		for(int i=0; i<numberOfThrows; i++) { 
+			
+			result += cubeThrow.nextInt(cubeType)+1; 
+			
+		}
+		
+		System.out.println(result+additionalValue);
+		
+		}
+		
+		
+		
+	}
+	
+}

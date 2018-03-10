@@ -1,0 +1,23 @@
+package exam;
+
+//Utwórz klasę `Manager`,
+//
+//Klasa ma spełniać następujące właściwości:
+//1. Dziedziczyć po `User`.
+//2. Posiadać atrybut prywatny zawierający tablicę referencji do obiektów klasy User.	
+//3. Posiadać atrybut prywatny zawierający referencje do obiektu klasy `Department`
+//4. Posiadać nadpisaną metodę `welcome()` zwracającą napis `Hello Manager ` + firstName + lastName;
+
+public class Manager extends User {
+	
+	private User[] referenceUsers; 
+	private Department referenceDepartment;
+	
+	@Override
+	public String welcome() { 
+		return "Hello Manager "+firstName+" "+lastName;
+		
+	}
+	
+
+}

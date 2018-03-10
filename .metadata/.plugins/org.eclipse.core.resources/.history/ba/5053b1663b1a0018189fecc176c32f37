@@ -1,0 +1,54 @@
+package pl.coderslab.excersises;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class cookie6
+ */
+@WebServlet("/cookie6")
+public class cookie6 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public cookie6() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String background = request.getParameter("background");
+		String text = request.getParameter("text");
+		
+		Cookie backgroundColor = new Cookie("backgroundColor",background);
+		Cookie textColor = new Cookie("textColor",text); 
+		
+		response.addCookie(backgroundColor);
+		response.addCookie(textColor);
+		response.getWriter().append("background-color: "+background+";");
+		response.getWriter().append("<font color=\""+text+"\">");
+		response.getWriter().append("Wybrałeś kolor tekstu: "+text+"<br>");
+		response.getWriter().append("Wybrałeś kolor tła: "+background+"<br>");
+			
+	}
+
+}

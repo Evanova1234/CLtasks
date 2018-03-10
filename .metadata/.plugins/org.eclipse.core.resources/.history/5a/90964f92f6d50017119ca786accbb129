@@ -1,0 +1,44 @@
+package b_Zadania_Domowe.a_Dzien_2;
+
+//Szyfr Cezara jest to szyfr za pomocą, którego Juliusz Cezar szyfrował 
+//swoje listy do Cycerona.
+//
+//W pliku `Main1.java` umieść metodę o sygnaturze 
+//`static String encode(String str)`.
+// 
+//1. Uzupełnij ciało metody tak, by zwracała napis 
+//zaszyfrowany szyfrem Cezara   
+
+
+/* Rozwiązać jeszcze raz*/ 
+public class Main1 {
+
+    public static void main(String[] args) {
+    	
+    	String sampleText = "acd"; 
+    	System.out.println(encode(sampleText,1));
+    	    	
+    }
+
+    static String encode(String str, int move) { 
+    	final String alphabet="abcdefghijklmnoprstuwyz"; 
+    	int originalIndex; 
+    	StringBuffer encodedText = new StringBuffer(); 
+    	String encodedString = new String(); 
+    	
+    	for(int i=0; i<str.length(); i++) { 
+    		
+    		originalIndex = alphabet.indexOf(str.charAt(i));
+    		
+    		if(originalIndex < str.length()) { 
+    			encodedText.append(alphabet.charAt(originalIndex+move));
+    		} else {
+    			encodedText.append(alphabet.charAt(originalIndex%str.length()));
+    		}
+    		
+    		
+    	}
+    	
+    	return encodedString = encodedText.toString(); 
+    }
+}

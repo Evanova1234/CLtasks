@@ -1,0 +1,42 @@
+package exam;
+
+public class BMI {
+	
+	private double weight; 
+	private double height; 
+	static double[] history; 
+	static int i; 
+	
+	public BMI(double weight, double height) { 
+		this.weight = weight;
+		this.height = height;
+	}
+	
+	
+	
+	public double calculate() { 
+		i++; 
+		history[i]= weight/(Math.pow(height, 2));
+		return Math.round(weight/Math.pow(height/100, 2)*100)/100;
+	}
+	
+	
+	public double bmiAVG() { 
+		
+		double average; 
+		double sum = 0;
+		
+		for(int x=0; x==i; x++) { 
+			sum=+ history[x];
+		}
+		
+		average = sum/i;
+		return average; 
+		
+	}
+	
+	
+	
+	
+
+}

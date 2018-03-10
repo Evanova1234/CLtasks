@@ -1,0 +1,7 @@
+package pl.coderslab.get;
+
+import javax.servlet.http.Cookie;
+
+public class Cookies extends Cookie {
+
+}

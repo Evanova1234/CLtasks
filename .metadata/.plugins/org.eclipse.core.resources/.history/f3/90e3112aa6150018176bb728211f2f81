@@ -1,0 +1,33 @@
+package exam;
+
+
+//Utwórz klasę `Department`. 
+//
+//Klasa ma zawierać następujące atrybuty:
+//
+//	*name
+//
+//Klasa ma zawierać getery i setery do wszystkich pól, konstruktor domyślny, konstruktor ustawiający wszystkie pola.
+//
+
+public class Department {
+	
+	private String name;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public Department() { 
+		
+	}
+	
+	public Department(String name) { 
+		this.name = name;
+	}
+	
+}

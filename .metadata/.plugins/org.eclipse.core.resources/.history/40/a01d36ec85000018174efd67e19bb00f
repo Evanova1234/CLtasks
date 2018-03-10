@@ -1,0 +1,23 @@
+package b_Zadania_domowe.a_Dzien_1;
+
+public class BankAccountTest {
+	
+	public static void main(String[] args) { 
+		
+		BankAccount bankAccount = new BankAccount(239839823);
+		
+		bankAccount.depositCash(100);
+		System.out.println(bankAccount.printInfo());
+		
+		bankAccount.depositCash(400);
+		System.out.println(bankAccount.printInfo());
+		
+		bankAccount.withdrawCash(50);
+		System.out.println(bankAccount.printInfo());
+		
+		bankAccount.withdrawCash(30000);
+		System.out.println(bankAccount.printInfo());
+		
+	}
+
+}

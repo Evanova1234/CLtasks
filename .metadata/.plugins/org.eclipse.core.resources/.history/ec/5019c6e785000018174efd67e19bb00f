@@ -1,0 +1,12 @@
+package b_Zadania_domowe.a_Dzien_1;
+
+public class AuthorTest {
+
+	
+	public static void main(String[] args) { 
+		
+		Author author = new Author(1, "Jędrzej", "Zboralski", "Max"); 
+		System.out.println(author.toString());
+		
+	}
+}

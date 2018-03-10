@@ -1,0 +1,60 @@
+package Cube;
+
+import java.util.Random;
+
+public class Main {
+
+	public static void main(String[] args) { 
+		
+		System.out.println(randomCube("")
+		
+	}
+	
+	
+	static int randomCube(String input) { 
+		
+		int numberOfThrows = computeThrows(input); 
+		int typeOfCube = determineCube(input); 
+		int additionalValue = calculateAddition(input); 
+		System.out.println("Mamy "+numberOfThrows+" rzutów, kostką o liczbie ścian "+typeOfCube+". A do całości dodajemy "+additionalValue);
+		int result = 0; 
+		Random throwCube = new Random();
+		
+		for(int i=0; i<=numberOfThrows; i++) { 
+			
+			result += throwCube.nextInt(typeOfCube)+1;
+		
+		}
+		
+		
+		return result+additionalValue; 
+		
+		
+	}
+	
+	
+	static int determineCube(String input) { 
+		int startPosition = input.indexOf("D");
+		return Character.getNumericValue(input.charAt(startPosition+1)); 
+	}
+	
+	
+	static int calculateAddition(String input) { 
+		
+		int startPosition = input.indexOf("+"); 
+		return Integer.parseInt(input.substring(startPosition+1));
+	}
+	
+	static int computeThrows(String input) { 
+		
+		int startPosition = input.indexOf("D");
+		
+		if(startPosition == 0) { 
+			return 1; 
+		} else { 
+			
+			return Integer.parseInt(input.substring(0, startPosition));			
+		}
+	}
+	
+}

@@ -1,0 +1,76 @@
+package exam;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.Scanner;
+
+//W pliku `Main3.java` napisz program, który:
+//
+//1. z linii komend pobierze następujące parametry:
+//    * imię
+//    * nazwisko
+//    * zarobki
+//    * id działu
+//2. Zweryfikuje poprawność danych - czy zarobki są poprawną wartością liczbową większą od 0.
+//3. Zapisze te dane do bazy danych do tabeli `users` (tabela taka sama jak w zadaniu 1).
+//
+//Pamiętaj o poprawnym połączeniu do bazy danych i jego zamknięciu.
+
+
+
+public class Main3 {
+	
+	
+	
+	
+	
+	public static void main(String[] args) { 
+		
+		Scanner userInput = new Scanner(System.in);
+		System.out.println("Podaj Imię: ");
+		String firstName = userInput.nextLine(); 
+		System.out.println("Podaj Nazwisko: ");
+		String lastName = userInput.nextLine();
+		int salary=0; 
+		
+		
+        while(!(salary>0)) { 
+            System.out.println("Podaj zarobki: ");
+            
+            while (!userInput.hasNextInt()) {
+                System.out.println("Niewłaściwa wartość!");
+                salary = userInput.nextInt();
+            }
+            
+            
+        }
+		
+		System.out.println("Podaj dział");
+		String department = userInput.nextLine(); 
+		
+		System.out.println(firstName+" "+lastName+" "+salary+" "+department);
+		
+		try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Staff?useSSL=false",
+				"root", "coderslab")) {
+
+			Statement statement = con.createStatement();
+			System.out.println("Zapis do bazy");
+			statement.executeUpdate("Insert into USERS values (0, \""+firstName+"\", \""+lastName+"\", NULL, "+salary+", 1, "+department+");");
+			System.out.println("Zapisano!");
+			
+			
+
+		} catch (Exception e) {
+
+			System.out.println(e);
+			e.printStackTrace();
+		
+		
+	}
+	
+	
+
+}
+	
+}

@@ -1,0 +1,80 @@
+package b_Zadania_domowe.a_Dzien_1;
+
+public class Book {
+
+	public int getId() {
+		return id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public boolean isAvailable() {
+		return available;
+	}
+
+	public Author getAuthor() {
+		return author;
+	}
+
+	public Author[] getAdditionalAuthors() {
+		return additionalAuthors;
+	}
+
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public void setAvailable(boolean available) {
+		this.available = available;
+	}
+
+	public void setAuthor(Author author) {
+		this.author = author;
+	}
+
+	public void setAdditionalAuthors(Author[] additionalAuthors) {
+		this.additionalAuthors = additionalAuthors;
+	}
+
+	private int id;
+	private String title;
+	private boolean available = true;
+	private Author author;
+	private Author[] additionalAuthors;
+
+	public Book(int id, String title, Author author,Author[] additionalAuthors ) {
+		this.id = id;
+		this.title = title;
+		this.author = author; 
+		this.additionalAuthors = additionalAuthors; 
+	}
+	
+	public Book(int id, String title) { 
+		this(id, title, null, null);
+	}
+	
+	public Book(int id, String title, Author author) { 
+		this(id, title, author, null);
+	}
+	
+}
+
+// Stwórz klasę `Book`, która ma spełniać następujące wymogi:
+//
+// 1. Mieć prywatne atrybuty:
+// * `id` - atrybut typu `int` ten powinien trzymać numer identyfikacyjny
+// książki,
+// * `title` - atrybut typu `String` określający imię pracownika,
+// * `available` - atrybut typu `boolean` określający czy książka jest możliwa
+// do wypożyczenia, z domyślną wartością ustawioną na `true`,
+// * `author` - atrybut określający referencję do klasy `Author`,
+// * `additionalAuthors` - tablica referencji do obiektów klasy `Author`.
+// 2. Posiadać konstruktor przyjmujący id, title.
+// 3. Posiadać konstruktor przyjmujący id, title, obiekt klasy `Author`.
+// 4. Posiadać konstruktor przyjmujący id, title, obiekt klasy `Author`, tablicę
+// obiektów klasy `Author`.
+// 5. Posiadać gettery do wszystkich pól.
+// 5. Posiadać settery do wszystkich pól oprócz pola `id`.
